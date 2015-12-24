@@ -10,6 +10,11 @@ python:
 
 install:
   - pip install tox tox-travis
+  - pip install coverage coveralls
 
 script:
   - tox -r
+
+after_success:
+  - coverage report
+  - coveralls
